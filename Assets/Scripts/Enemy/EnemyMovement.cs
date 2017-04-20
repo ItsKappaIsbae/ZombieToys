@@ -5,7 +5,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
 	[HideInInspector] public FrostDebuff FrostDebuff;				//Reference to a frost debuff that may be attached to the enemy
 
 	[Header("Components")]
-	[SerializeField] NavMeshAgent navMeshAgent; 					//Reference to the navmesh agent component
+	[SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent; 					//Reference to the navmesh agent component
 	[SerializeField] Animator animator;								//Reference to the animator component
 
 	[Header("Stink Hit Properties")]
@@ -31,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
 	void Reset ()
 	{
 		//Grab references to the needed components
-		navMeshAgent = GetComponent<NavMeshAgent> ();
+		navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
 		animator = GetComponent<Animator> ();
 	}
 
