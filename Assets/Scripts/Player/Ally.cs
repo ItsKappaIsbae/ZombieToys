@@ -1,17 +1,18 @@
 ﻿//This script controls the allies. An ally is a simple entity which, once spawned, simply moves to a designated position
 
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Ally : MonoBehaviour
 {
 	public float Duration;							//How long the ally stays spawned
 
-	[SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent;		//A reference to the ally's navmesh agent
+	[SerializeField] NavMeshAgent navMeshAgent;		//A reference to the ally's navmesh agent
 
 	void Reset()
 	{
 		//Get a reference to the navmesh agent
-		navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+		navMeshAgent = GetComponent<NavMeshAgent>();
 	}
 
 	public void Move(Vector3 point)
